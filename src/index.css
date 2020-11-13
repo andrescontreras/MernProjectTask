@@ -124,10 +124,10 @@ aside {
 .projects {
   margin-top: 10rem;
 }
-.listado-projects li {
+.projects-list li {
   margin-bottom: 2rem;
 }
-.listado-projects li a {
+.projects-list li a {
   font-size: 1.4rem;
   color: var(--gris2);
   line-height: 1.5;
@@ -139,35 +139,35 @@ aside {
   background-color: var(--gris2);
   padding: 4rem;
 }
-.nombre-usuario {
+.user-name {
   color: var(--blanco);
   font-size: 2.2rem;
   margin: 0;
 }
-.nombre-usuario span {
+.user-name span {
   font-weight: 900;
 }
-.nav-principal a {
+.principal-nav a {
   color: var(--blanco);
   text-decoration: none;
 }
-.nav-principal a:first-of-type {
+.principal-nav a:first-of-type {
   margin-right: 2rem;
 }
 
-/** Formulario crear y editar tareas **/
-.formulario {
+/** form crear y editar tasks **/
+.form {
   background-color: var(--gris3);
   padding: 4rem;
 }
-.formulario form {
+.form form {
   max-width: 600px;
   margin: 0 auto;
 }
-.contenedor-input {
+.input-content {
   display: flex;
 }
-.contenedor-input label {
+.input-content label {
   margin-bottom: 1rem;
   color: var(--blanco);
 }
@@ -179,17 +179,17 @@ aside {
   width: 100%;
 }
 
-/** TAREAS LISTADO **/
+/** taskS LISTADO **/
 .task-content {
   padding: 4rem;
 }
 
-.listado-tareas {
+.task-list {
   max-width: 600px;
   margin: 0 auto;
 }
 
-.tarea {
+.task {
   display: flex;
   justify-content: space-between;
   background-color: var(--blanco);
@@ -208,15 +208,15 @@ aside {
   -moz-box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
   box-shadow: 0px 6px 11px -8px rgba(0, 0, 0, 0.9);
 }
-.tarea .acciones .btn:first-of-type {
+.task .acciones .btn:first-of-type {
   margin-right: 1rem;
 }
-.tarea p {
+.task p {
   font-size: 1.6rem;
   flex: 1;
   padding-right: 2rem;
 }
-.tarea .btn {
+.task .btn {
   padding: 0.8rem;
   font-size: 1.4rem;
   border-radius: 0;
@@ -260,20 +260,20 @@ aside {
   color: var(--blanco);
 }
 
-.tarea-enter,
+.task-enter,
 .proyecto-enter {
   opacity: 0;
 }
-.tarea-enter-active,
+.task-enter-active,
 .proyecto-enter-active {
   opacity: 1;
   transition: opacity 200ms;
 }
-.tarea-exit,
+.task-exit,
 .proyecto-exit {
   opacity: 1;
 }
-.tarea-exit-active,
+.task-exit-active,
 .proyecto-exit-active {
   opacity: 0;
   transition: opacity 200ms;
