@@ -227,7 +227,7 @@ aside {
   margin-right: 1rem;
 }
 .state button,
-.mensaje {
+.message {
   font-weight: 900;
   font-family: var(--textFont);
   font-size: 1rem;
@@ -236,12 +236,12 @@ aside {
   cursor: pointer;
   border: none;
 }
-.mensaje {
+.message {
   text-align: center;
   font-size: 1.6rem;
   border-radius: 0;
 }
-.mensaje:hover {
+.message:hover {
   cursor: default;
 }
 .finished,

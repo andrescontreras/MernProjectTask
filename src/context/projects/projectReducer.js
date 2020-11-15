@@ -1,4 +1,4 @@
-import { FORM_PROJECT, GET_PROJECTS } from "../../types";
+import { ADD_PROJECT, DELETE_PROJECT, FORM_PROJECT, FORM_VALIDATION, GET_CURRENT_PROJECT, GET_PROJECTS } from "../../types";
 
 export default (state, action) => {
     switch (action.type) {
@@ -12,6 +12,33 @@ export default (state, action) => {
             return {
                 ...state,
                 projects: action.payload
+            }
+
+        case ADD_PROJECT:
+            return {
+                ...state,
+                projects: [...state.projects, action.payload],
+                form: false,
+                form_error: false
+            }
+
+        case FORM_VALIDATION:
+            return {
+                ...state,
+                form_error: true
+            }
+
+        case GET_CURRENT_PROJECT:
+            return {
+                ...state,
+                current_project: state.projects.filter(project => project.id === action.payload)
+            }
+
+        case DELETE_PROJECT:
+            return {
+                ...state,
+                projects: state.projects.filter(project => project.id !== action.payload),
+                current_project: null
             }
         default:
             return state;

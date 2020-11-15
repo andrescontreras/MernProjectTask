@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import projectContext from '../../context/projects/projectContext';
 
-const Project = ({project}) => {
+
+const Project = ({ project }) => {
+
+    const projectsContext = useContext(projectContext);
+    const { getCurrentProject } = projectsContext;
+
+    const onClickProject = () => {
+        getCurrentProject(project.id);
+    }
+
     return (
         <li>
-            <button type="button" className="btn btn-blank">
+            <button type="button" className="btn btn-blank" onClick={onClickProject}>
                 {project.name}
             </button>
         </li>
@@ -12,7 +22,7 @@ const Project = ({project}) => {
 };
 
 Project.propTypes = {
-    
+
 };
 
 export default Project;

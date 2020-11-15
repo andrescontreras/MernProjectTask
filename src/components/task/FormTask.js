@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
+import projectContext from '../../context/projects/projectContext';
 
 const FormTask = props => {
+
+    const projectsContext = useContext(projectContext);
+    const { current_project } = projectsContext;
+
+    if (!current_project) {
+        return null
+    }
+
+    const [current_project_value] = current_project;
+
     return (
         <div className="form">
             <form>
@@ -21,13 +32,13 @@ const FormTask = props => {
                     />
                 </div>
             </form>
-            
+
         </div>
     );
 };
 
 FormTask.propTypes = {
-    
+
 };
 
 export default FormTask;
