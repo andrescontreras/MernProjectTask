@@ -261,20 +261,20 @@ aside {
 }
 
 .task-enter,
-.proyecto-enter {
+.project-enter {
   opacity: 0;
 }
 .task-enter-active,
-.proyecto-enter-active {
+.project-enter-active {
   opacity: 1;
   transition: opacity 200ms;
 }
 .task-exit,
-.proyecto-exit {
+.project-exit {
   opacity: 1;
 }
 .task-exit-active,
-.proyecto-exit-active {
+.project-exit-active {
   opacity: 0;
   transition: opacity 200ms;
 }

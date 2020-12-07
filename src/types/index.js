@@ -4,3 +4,11 @@ export const ADD_PROJECT = 'ADD_PROJECT';
 export const FORM_VALIDATION = 'FORM_VALIDATION';
 export const GET_CURRENT_PROJECT = 'GET_CURRENT_PROJECT';
 export const DELETE_PROJECT = 'DELETE_PROJECT';
+
+export const PROJECT_TASKS = 'PROJECT_TASKS';
+export const ADD_TASK = 'ADD_TASK';
+export const VALIDATE_TASK = 'VALIDATE_TASK';
+export const DELETE_TASK = 'DELETE_TASK';
+export const TASK_STATE = 'TASK_STATE';
+
+

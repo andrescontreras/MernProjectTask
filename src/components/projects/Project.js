@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import projectContext from '../../context/projects/projectContext';
+import TaskContext from '../../context/task/TaskContext';
 
 
 const Project = ({ project }) => {
@@ -8,8 +9,13 @@ const Project = ({ project }) => {
     const projectsContext = useContext(projectContext);
     const { getCurrentProject } = projectsContext;
 
+    const tasksContext = useContext(TaskContext);
+    const { getTasksByProject } = tasksContext;
+
     const onClickProject = () => {
         getCurrentProject(project.id);
+        getTasksByProject(project.id);
+
     }
 
     return (
