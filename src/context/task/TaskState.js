@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { ADD_TASK, DELETE_TASK, PROJECT_TASKS, TASK_STATE, VALIDATE_TASK } from '../../types';
+import { ADD_TASK, CURRENT_TASK, DELETE_TASK, PROJECT_TASKS, TASK_STATE, VALIDATE_TASK, UPDATE_TASK } from '../../types';
 import TaskContext from './TaskContext';
 import TaskReducer from './TaskReducer';
 
@@ -17,7 +17,8 @@ const TaskState = props => {
             { id: 9, name: 'tarea9', state: true, projectId: 4 }
         ],
         projectTasks: null,
-        taskError: false
+        taskError: false,
+        currentTask: null
     }
 
     const [state, dispatch] = useReducer(TaskReducer, initialState);
@@ -56,6 +57,20 @@ const TaskState = props => {
         })
     }
 
+    const saveCurrentTask = (task) => {
+        dispatch({
+            type: CURRENT_TASK,
+            payload: task
+        })
+    }
+
+    const updateTask = (task) => {
+        dispatch({
+            type: UPDATE_TASK,
+            payload: task
+        })
+    }
+
     return (
         <TaskContext.Provider
             value={
@@ -64,12 +79,15 @@ const TaskState = props => {
                     tasks: state.tasks,
                     projectTasks: state.projectTasks,
                     taskError: state.taskError,
+                    currentTask: state.currentTask,
                     // Functions
                     getTasksByProject,
                     addTask,
                     validateTask,
                     deleteTaskById,
-                    changeTaskStatus
+                    changeTaskStatus,
+                    saveCurrentTask,
+                    updateTask
                 }
             }
         >

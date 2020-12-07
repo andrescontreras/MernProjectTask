@@ -11,7 +11,7 @@ const Task = ({ task }) => {
     const [current_project_value] = current_project;
 
     const tasksContext = useContext(TaskContext);
-    const { deleteTaskById, changeTaskStatus, getTasksByProject } = tasksContext;
+    const { deleteTaskById, changeTaskStatus, getTasksByProject, saveCurrentTask } = tasksContext;
 
     const onClickDelete = () => {
         console.log(task.id);
@@ -19,7 +19,7 @@ const Task = ({ task }) => {
         getTasksByProject(current_project_value.id)
     }
 
-    const onCLickChangeStatus = () => {
+    const onClickChangeStatus = () => {
         if (task.state) {
             task.state = false;
         } else {
@@ -28,17 +28,21 @@ const Task = ({ task }) => {
         changeTaskStatus(task);
     }
 
+    const onClickEdit = () => {
+        saveCurrentTask(task)
+    }
+
     return (
         <li className="task shadow">
             <p>{task.name}</p>
             <div className="state">
                 {task.state
-                    ? (<button type="button" className="finished" onClick={onCLickChangeStatus}>Completo</button>)
-                    : (<button type="button" className="not-finished" onClick={onCLickChangeStatus}>Incompleto</button>)
+                    ? (<button type="button" className="finished" onClick={onClickChangeStatus}>Completo</button>)
+                    : (<button type="button" className="not-finished" onClick={onClickChangeStatus}>Incompleto</button>)
                 }
             </div>
             <div className="actions">
-                <button type="button" className="btn btn-primario">Editar</button>
+                <button type="button" className="btn btn-primario" onClick={onClickEdit}>Editar</button>
                 <button type="button" className="btn btn-secundario" onClick={onClickDelete}>Eliminar</button>
             </div>
         </li>
