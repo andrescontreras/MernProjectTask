@@ -1,5 +1,5 @@
 :root {
-  --blanco: #ffffff;
+  --white: #ffffff;
   --gris1: #edf2f6;
   --gris2: #2f3848;
   --gris3: #1a202d;
@@ -68,7 +68,7 @@ a {
 }
 .btn-primario {
   background-color: var(--gris2);
-  color: var(--blanco);
+  color: var(--white);
 }
 .btn-primario:hover {
   background: var(--gris3);
@@ -97,7 +97,7 @@ a {
   }
 
   aside {
-    background-color: var(--blanco);
+    background-color: var(--white);
     flex: 0 0 300px;
   }
   .principal-section {
@@ -140,7 +140,7 @@ aside {
   padding: 4rem;
 }
 .user-name {
-  color: var(--blanco);
+  color: var(--white);
   font-size: 2.2rem;
   margin: 0;
 }
@@ -148,7 +148,7 @@ aside {
   font-weight: 900;
 }
 .principal-nav a {
-  color: var(--blanco);
+  color: var(--white);
   text-decoration: none;
 }
 .principal-nav a:first-of-type {
@@ -169,7 +169,7 @@ aside {
 }
 .input-content label {
   margin-bottom: 1rem;
-  color: var(--blanco);
+  color: var(--white);
 }
 .input-text {
   padding: 1rem;
@@ -192,7 +192,7 @@ aside {
 .task {
   display: flex;
   justify-content: space-between;
-  background-color: var(--blanco);
+  background-color: var(--white);
   padding: 0.5rem 2rem;
   align-items: center;
   margin-bottom: 1rem;
@@ -257,7 +257,7 @@ aside {
   max-width: 600px;
   margin: 2rem auto 0 auto;
   background-color: rgb(170, 0, 0);
-  color: var(--blanco);
+  color: var(--white);
 }
 
 .task-enter,
@@ -292,7 +292,7 @@ aside {
   padding: 5rem 3rem;
   max-width: 500px;
   width: 95%;
-  background-color: var(--blanco);
+  background-color: var(--white);
   border-radius: 1rem;
 }
 
@@ -320,4 +320,36 @@ aside {
   margin-top: 2rem;
   display: block;
   opacity: 0.7;
+}
+
+.alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  font-family: var(--headingFont);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  text-align: center;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .alerta {
+    width: auto;
+    top: 30px;
+    right: 10px;
+    left: auto;
+  }
+}
+
+.alert-ok {
+  background-color: rgb(109, 211, 109);
+  color: rgb(2, 103, 2);
+}
+
+.alert-error {
+  background-color: rgb(230, 78, 78);
+  color: var(--white);
 }
