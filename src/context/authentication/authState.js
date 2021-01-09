@@ -3,6 +3,8 @@ import {
   SUCCESSFUL_REGISTRATION,
   ERROR_LOGIN,
   GET_USER,
+  SUCCESSFUL_LOGIN,
+  LOG_OUT,
 } from '../../types';
 import { v4 as uuidv4 } from 'uuid';
 import axiosClient from '../../config/axios';
@@ -67,6 +69,37 @@ const AuthState = (props) => {
     }
   };
 
+  const login = async (data) => {
+    try {
+      const request = await axiosClient.post('/api/auth', data);
+      console.log(request);
+
+      dispatch({
+        type: SUCCESSFUL_LOGIN,
+        payload: request.data,
+      });
+
+      getUserAuthenticated();
+    } catch (error) {
+      console.log(error.response.data.msg);
+      const alert = {
+        message: error.response.data.msg,
+        category: 'alert-error',
+      };
+
+      dispatch({
+        type: ERROR_LOGIN,
+        payload: alert,
+      });
+    }
+  };
+
+  const logout = () => {
+    dispatch({
+      type: LOG_OUT,
+    });
+  };
+
   return (
     <authContext.Provider
       value={{
@@ -77,6 +110,9 @@ const AuthState = (props) => {
         message: state.message,
         // functions
         registerUser,
+        login,
+        getUserAuthenticated,
+        logout,
       }}
     >
       {props.children}

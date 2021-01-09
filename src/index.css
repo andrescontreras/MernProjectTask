@@ -353,3 +353,13 @@ aside {
   background-color: rgb(230, 78, 78);
   color: var(--white);
 }
+
+.btn-blank {
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-color: transparent;
+}
+.logout {
+  color: var(--white);
+}
