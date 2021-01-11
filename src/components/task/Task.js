@@ -11,12 +11,12 @@ const Task = ({ task }) => {
     const [current_project_value] = current_project;
 
     const tasksContext = useContext(TaskContext);
-    const { deleteTaskById, changeTaskStatus, getTasksByProject, saveCurrentTask } = tasksContext;
+    const { deleteTaskById, getTasksByProject, updateTask, saveCurrentTask } = tasksContext;
 
     const onClickDelete = () => {
-        console.log(task.id);
-        deleteTaskById(task.id)
-        getTasksByProject(current_project_value.id)
+        console.log(task._id);
+        deleteTaskById(task._id, current_project_value._id);
+        getTasksByProject(current_project_value._id)
     }
 
     const onClickChangeStatus = () => {
@@ -25,7 +25,7 @@ const Task = ({ task }) => {
         } else {
             task.state = true;
         }
-        changeTaskStatus(task);
+        updateTask(task);
     }
 
     const onClickEdit = () => {

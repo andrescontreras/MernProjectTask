@@ -41,8 +41,7 @@ const FormTask = props => {
 
         if (currentTask === null) {
 
-            task.projectId = current_project_value.id;
-            task.state = false;
+            task.project = current_project_value._id;
             addTask(task);
 
         } else {

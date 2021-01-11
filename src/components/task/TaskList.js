@@ -11,6 +11,7 @@ const TaskList = (props) => {
 
   const tasksContext = useContext(TaskContext);
   const { projectTasks } = tasksContext;
+  console.log(projectTasks);
 
   if (!current_project) {
     return <h2> Selecciona un proyecto</h2>;
@@ -32,14 +33,14 @@ const TaskList = (props) => {
             <p>Sin tareas</p>
           </li>
         ) : (
-          <TransitionGroup>
-            {projectTasks.map((task) => (
-              <CSSTransition key={task.id} timeout={200} classNames="task">
-                <Task key={task.id} task={task} />
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
-        )}
+            <TransitionGroup>
+              {projectTasks.map((task) => (
+                <CSSTransition key={task._id} timeout={200} classNames="task">
+                  <Task key={task._id} task={task} />
+                </CSSTransition>
+              ))}
+            </TransitionGroup>
+          )}
         <button
           type="button"
           className="btn btn-primario"

@@ -12,7 +12,7 @@ const Project = ({ project }) => {
 
   const onClickProject = () => {
     getCurrentProject(project._id);
-    getTasksByProject(project.id);
+    getTasksByProject(project._id);
   };
 
   return (
